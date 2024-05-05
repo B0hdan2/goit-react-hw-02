@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import SipHappensCafe from "./SipHappensCafe/SipHappensCafe.jsx";
+import Description from "./Description/Description.jsx";
 import Options from "./Options/Options.jsx";
 import Feedback from "./Feedback/Feedback.jsx";
+import Notification from "./Notification/Notification.jsx";
 
 const App = () => {
   const [reviews, setReviews] = useState(() => {
-    const savedClicks = JSON.parse(window.localStorage.getItem('feedback'))
+    const savedClicks = JSON.parse(window.localStorage.getItem("feedback"));
 
     if (savedClicks !== null) {
       return savedClicks;
     }
-    
+
     return {
       good: 0,
       neutral: 0,
@@ -18,9 +19,9 @@ const App = () => {
     };
   });
 
-useEffect(()=>{
-window.localStorage.setItem('feedback', JSON.stringify({...reviews}))
-},[reviews])
+  useEffect(() => {
+    window.localStorage.setItem("feedback", JSON.stringify({ ...reviews }));
+  }, [reviews]);
 
   const updateFeedback = (feedbackType) => {
     if (feedbackType === "reset") {
@@ -35,11 +36,21 @@ window.localStorage.setItem('feedback', JSON.stringify({...reviews}))
   };
 
   const totalFeedback = reviews.good + reviews.neutral + reviews.bad;
+  const total = Math.round((reviews.good / totalFeedback) * 100);
   return (
     <>
-      <SipHappensCafe />
+      <Description />
       <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} />
-      <Feedback reviews={reviews} totalFeedback={totalFeedback} />
+
+      {totalFeedback === 0 ? (
+        <Notification />
+      ) : (
+        <Feedback
+          reviews={reviews}
+          total={total}
+          totalFeedback={totalFeedback}
+        />
+      )}
     </>
   );
 };

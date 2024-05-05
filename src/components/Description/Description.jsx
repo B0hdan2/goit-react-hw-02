@@ -1,7 +1,7 @@
-import s from "./SipHappensCafe.module.css";
-function SipHappensCafe() {
+import s from "./Description.module.css";
+function Description() {
   return (
-    <div className={s.SipHappensCafe}>
+    <div className={s.Description}>
       <h1>Sip Happens Café</h1>
       <p>
         Please leave your feedback about our service by selecting one of the
@@ -11,4 +11,4 @@ function SipHappensCafe() {
   );
 }
 
-export default SipHappensCafe;
+export default Description;
