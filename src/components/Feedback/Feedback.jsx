@@ -1,4 +1,4 @@
-const Feedback = ({ reviews, positiveFeedback, totalFeedback }) => {
+const Feedback = ({ reviews, percentages, totalFeedback }) => {
   return (
     <div>
       <>
@@ -6,7 +6,7 @@ const Feedback = ({ reviews, positiveFeedback, totalFeedback }) => {
         <p>Neutral: {reviews.neutral}</p>
         <p>Bad: {reviews.bad}</p>
         <p>Total: {totalFeedback}</p>
-        <p>Positive: {positiveFeedback}%</p>
+        <p>Positive: {percentages}%</p>
       </>
     </div>
   );

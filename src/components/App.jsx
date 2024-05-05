@@ -36,7 +36,7 @@ const App = () => {
   };
 
   const totalFeedback = reviews.good + reviews.neutral + reviews.bad;
-  const total = Math.round((reviews.good / totalFeedback) * 100);
+  const percentages = Math.round((reviews.good / totalFeedback) * 100);
   return (
     <>
       <Description />
@@ -47,7 +47,7 @@ const App = () => {
       ) : (
         <Feedback
           reviews={reviews}
-          positiveFeedback={total}
+          percentages={percentages}
           totalFeedback={totalFeedback}
         />
       )}
