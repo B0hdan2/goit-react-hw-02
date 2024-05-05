@@ -13,23 +13,23 @@ const App = () => {
   });
 
   const updateFeedback = (feedbackType) => {
-    if(feedbackType === "reset"){
-     return setReviews({
-      good: 0,
-      neutral: 0,
-      bad: 0,
-    })
+    if (feedbackType === "reset") {
+      return setReviews({
+        good: 0,
+        neutral: 0,
+        bad: 0,
+      });
     }
 
-    setReviews({ ...reviews, [feedbackType]: reviews[feedbackType] + 1});
+    setReviews({ ...reviews, [feedbackType]: reviews[feedbackType] + 1 });
   };
 
   const totalFeedback = reviews.good + reviews.neutral + reviews.bad;
   return (
     <>
       <SipHappensCafe />
-      <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback}/>
-      <Feedback reviews={reviews} totalFeedback={totalFeedback}/>
+      <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} />
+      <Feedback reviews={reviews} totalFeedback={totalFeedback} />
     </>
   );
 };

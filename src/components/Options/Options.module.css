@@ -1,0 +1,39 @@
+.Options {
+    margin-bottom: 20px;
+}
+
+.good {
+    background-color: green;
+}
+
+.good:hover,
+.good:focus {
+    background-color: rgb(0, 255, 0);
+}
+
+.neutral {
+    background-color: rgb(136, 136, 1);
+}
+
+.neutral:hover,
+.neutral:focus {
+    background-color: yellow;
+}
+
+.bad {
+    background-color: rgb(167, 0, 0);
+}
+
+.bad:hover,
+.bad:focus {
+    background-color: red;
+}
+
+.reset {
+    background-color: cornflowerblue;
+}
+
+.reset:hover,
+.reset:focus {
+    background-color: rgb(0, 238, 255);
+}
