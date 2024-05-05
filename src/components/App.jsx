@@ -47,7 +47,7 @@ const App = () => {
       ) : (
         <Feedback
           reviews={reviews}
-          total={total}
+          positiveFeedback={total}
           totalFeedback={totalFeedback}
         />
       )}
